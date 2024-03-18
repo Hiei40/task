@@ -45,11 +45,14 @@ class _ChangepasswordState extends State<Changepassword> {
         children: [
           Column(
             children: [
-              CustomText(
-                text: "your new password must be diffrent  From your previeous Password",
-                maxLines: 2,
-                fontWeight: FontWeight.w700,
-                fontSize: MediaQuery.of(context).size.width * 0.04,
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: CustomText(
+                  text: "your new password must be diffrent From your previeous Password",
+                  maxLines: 2,
+                  fontWeight: FontWeight.w700,
+                  fontSize: MediaQuery.of(context).size.width * 0.04,
+                ),
               ),
 
             ],
