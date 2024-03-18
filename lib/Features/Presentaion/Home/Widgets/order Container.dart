@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 
-import '../color Manger.dart';
-import 'CustomText.dart';
+import '../../../../core/utils/color Manger.dart';
+import '../../../../core/utils/publicWidgets/CustomText.dart';
 
 class OrderContainer extends StatelessWidget {
   const OrderContainer(

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'Features/Presentaion/Deleviery/Order.dart';
-import 'about.dart';
+import 'Features/Presentaion/Home/Order.dart';
+import 'Features/Presentaion/Home/about.dart';
 
 void main() {
   runApp(const MyApp());
