@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:task/Features/Data/Model/FromModel.dart';
 import 'package:task/core/utils/publicWidgets/CustomText.dart';
+import 'package:task/core/utils/publicWidgets/order%20Container.dart';
 
 import '../../../core/utils/color Manger.dart';
 import '../../Data/Model/DeleveryInfo.dart';
+import '../../Data/Model/ToModel.dart';
+import 'orderDetails.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -13,7 +17,30 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
-  Delivery delivery =Delivery(timeOfOrder: DateTime.now(), timeOfDelivery: DateTime.now(), payment: "20110", numOfPackage: "1210", weight: 100,  size: "Large", description: 'Fragile items', notes: ['Handle with care'], status: 'safasf', descriptionInfo: 'fafsafsafasf');
+  Delivery delivery = Delivery(
+      timeOfOrder: DateTime.utc(2024, 3, 13),
+      timeOfDelivery: DateTime.now(),
+      payment: "20110",
+      numOfPackage: "1210",
+      weight: 100,
+      size: "Large",
+      description: 'Fragile items',
+      notes: ['Handle with care'],
+      status: 'safasf',
+      descriptionInfo: 'fafsafsafasf');
+  Forminfo forminfo = Forminfo(
+      name: "mohamed Khaled",
+      city: "Faisal",
+      government: "Giza",
+      country: "Egypt",
+      phone: "01112348412");
+  Toinfo toinfo = Toinfo(
+    name: "Ahmed Osman",
+    city: 'DownTown',
+    government: "Cairo",
+    country: "Egypt",
+    phone: '01111134444',
+  );
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +50,8 @@ class _HomeScreenState extends State<HomeScreen> {
         leading: IconButton(
           icon: Icon(Icons.menu, color: ColorManger.Kblue),
           onPressed: () {
-            _scaffoldKey.currentState!.openDrawer(); // Open drawer using GlobalKey
+            _scaffoldKey.currentState!
+                .openDrawer(); // Open drawer using GlobalKey
           },
         ),
         centerTitle: true,
@@ -78,76 +106,63 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ),
       ),
-      body: Column(
-        children: [
-
-CustomText(text: "MyOrder",fontWeight: FontWeight.w700,
-fontSize:MediaQuery.of(context).size.width* 0.04,
-),
-          Padding(
-            padding: const EdgeInsets.all(15.0),
-            child: Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.all(Radius.circular(10)),
-                color: ColorManger.WhiteSwap,
-
-              ),
-              width: double.infinity,
-              height: MediaQuery.of(context).size.height * 0.20,
-              child: Stack(children: [
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Column(
-                    children: [
-                      Row(children: [
-                        Container(
-                          height: 20,
-                          width: 20,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.all(Radius.circular(5)),
-                            color: ColorManger.Kblue,
-
-                          ),
-                        ),
-                        CustomText(text: " MyOrder:${delivery.numOfPackage}",fontWeight: FontWeight.w700,
-                          fontSize:MediaQuery.of(context).size.width* 0.020,
-                        ),
-                        CustomText(text: " MyOrder:${delivery.payment}",fontWeight: FontWeight.w700,
-                          fontSize:MediaQuery.of(context).size.width* 0.020,
-                        ),
-                        SizedBox(
-                          width: 40,
-                        ),
-                        Container(
-                          alignment: Alignment.center,
-                          width: 130,
-                          height: 20,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(20),
-                        color:ColorManger.Kblue,
-                      ),
-                          child:  CustomText(text: "${delivery.timeOfDelivery}",fontWeight: FontWeight.w700,
-                            fontSize:MediaQuery.of(context).size.width* 0.02,
-                          ) ,
-                        )
-                      ],),
-                      SizedBox(
-                        height: 5,
-                      ),
-                      Container(
-                        height: 1,
-                        width: 450,
-                        color: Colors.red,
-                      )
-                    ],
-                  ),
-                )
-
-
-              ],),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            CustomText(
+              text: "Order",
+              fontWeight: FontWeight.w700,
+              fontSize: MediaQuery.of(context).size.width * 0.04,
             ),
-          ),
-        ],
+            ListView.builder(
+                shrinkWrap: true,
+                physics: NeverScrollableScrollPhysics(),
+                itemBuilder: (context, index) {
+                  return InkWell(
+                    onTap: () {
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => OrderDeirals(
+                              deliverynumOfPackage: delivery.numOfPackage,
+                              deliverypayment: delivery.payment,
+                              deliverytimeOfDelivery: delivery.timeOfDelivery,
+                              forminfoname: forminfo.name,
+                              forminfophone: forminfo.phone,
+                              forminfocity: forminfo.city,
+                              forminfogovernment: forminfo.government,
+                              forminfocountry: forminfo.country,
+                              Toinfoname: toinfo.name,
+                              Tophone: toinfo.phone,
+                              Tocity: toinfo.city,
+                              tocity: toinfo.city,
+                              togovernment: toinfo.government,
+                              tocountry: toinfo.country
+
+
+                          )
+                      )
+
+                      );
+                    },
+                    child: OrderContainer(
+                        deliverynumOfPackage: delivery.numOfPackage,
+                        deliverypayment: delivery.payment,
+                        deliverytimeOfDelivery: delivery.timeOfDelivery,
+                        forminfoname: forminfo.name,
+                        forminfophone: forminfo.phone,
+                        forminfocity: forminfo.city,
+                        forminfogovernment: forminfo.government,
+                        forminfocountry: forminfo.country,
+                        Toinfoname: toinfo.name,
+                        Tophone: toinfo.phone,
+                        Tocity: toinfo.city,
+                        tocity: toinfo.city,
+                        togovernment: toinfo.government,
+                        tocountry: toinfo.country),
+                  );
+                },
+                itemCount: 5)
+          ],
+        ),
       ),
     );
   }

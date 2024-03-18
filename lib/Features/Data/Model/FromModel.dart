@@ -14,10 +14,4 @@ class Forminfo {
   });
 }
 
-Forminfo forminfo = Forminfo(
-    name: "mohamed Khaled",
-    city: "Faisal",
-    government: "Giza",
-    country: "Egypt",
-    phone: "01112348412"
-);
+

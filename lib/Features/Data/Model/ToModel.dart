@@ -3,7 +3,7 @@ class Toinfo {
   final String city;
   final String government;
   final String country;
-  final double phone;
+  final String phone;
 
   Toinfo({
     required this.name,
@@ -13,10 +13,3 @@ class Toinfo {
     required this.phone,
   });
 }
-Toinfo toinfo = Toinfo(
-  name: "Ahmed Osman",
-  city: 'DownTown',
-  government: "Cairo",
-  country: "Egypt",
-  phone: 01111134444,
-);
