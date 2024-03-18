@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:task/Features/Data/Model/FromModel.dart';
 import 'package:task/core/utils/publicWidgets/CustomText.dart';
-import 'package:task/Features/Presentaion/Home/Widgets/order%20Container.dart';
 
-import '../../../core/utils/color Manger.dart';
-import '../../Data/Model/DeleveryInfo.dart';
-import '../../Data/Model/ToModel.dart';
+import '../../../../core/utils/color Manger.dart';
+
+import '../../Home/Data/Model/DeleveryInfo.dart';
+import '../../Home/Data/Model/FromModel.dart';
+import '../../Home/Data/Model/ToModel.dart';
+import 'Widgets/order Container.dart';
 import 'orderDetails.dart';
 
 class HomeScreen extends StatefulWidget {

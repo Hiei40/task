@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
-import 'Features/Presentaion/Home/Order.dart';
-import 'Features/Presentaion/Home/about.dart';
+import 'Features/Presentaion/View/Settings.dart';
+import 'Features/Presentaion/View/about.dart';
+
 
 void main() {
   runApp(const MyApp());
@@ -22,7 +23,7 @@ debugShowCheckedModeBanner: false,
         useMaterial3: true,
 
       ),
-      home:  Changepassword(),
+      home:  Settings(),
     );
   }
 }

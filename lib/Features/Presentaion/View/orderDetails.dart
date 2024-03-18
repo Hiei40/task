@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../../../core/utils/color Manger.dart';
-import '../../../core/utils/publicWidgets/CustomText.dart';
+import '../../../../core/utils/color Manger.dart';
+import '../../../../core/utils/publicWidgets/CustomText.dart';
 import 'Widgets/order Container.dart';
 
 class OrderDeirals extends StatefulWidget {
