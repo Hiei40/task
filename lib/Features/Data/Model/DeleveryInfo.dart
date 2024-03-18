@@ -20,8 +20,8 @@ class Delivery {
   });
 }
 Delivery delivery = Delivery(
-  timeOfOrder: DateTime.now(), // Example time of order
-  timeOfDelivery: DateTime.now(), // Example time of delivery
+  timeOfOrder: DateTime.now(),
+  timeOfDelivery: DateTime.now(),
   payment: 'Cash',
   numOfPackage: '1',
   weight: 200,

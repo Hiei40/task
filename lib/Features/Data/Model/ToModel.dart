@@ -1,11 +1,11 @@
-class Forminfo {
+class Toinfo {
   final String name;
   final String city;
   final String government;
   final String country;
-  final String phone;
+  final double phone;
 
-  Forminfo({
+  Toinfo({
     required this.name,
     required this.city,
     required this.government,
@@ -13,4 +13,10 @@ class Forminfo {
     required this.phone,
   });
 }
-Forminfo forminfo=Forminfo(name: "mohamed Khaled", city: "Faisal", government: "Giza", country: "Egypt", phone: "01112348412");
+Toinfo toinfo = Toinfo(
+  name: "Ahmed Osman",
+  city: 'DownTown',
+  government: "Cairo",
+  country: "Egypt",
+  phone: 01111134444,
+);

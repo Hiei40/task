@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:task/color%20Manger.dart';
+import 'package:task/core/utils/color%20Manger.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
