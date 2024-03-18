@@ -4,8 +4,10 @@ class Delivery {
   final String payment;
   final String numOfPackage;
   final double weight;
+  final String status; // Add status attribute
   final String size;
   final String description;
+  final String descriptionInfo; // Add descriptionInfo attribute
   final List<String> notes;
 
   Delivery({
@@ -14,18 +16,10 @@ class Delivery {
     required this.payment,
     required this.numOfPackage,
     required this.weight,
+    required this.status,
     required this.size,
     required this.description,
+    required this.descriptionInfo,
     required this.notes,
   });
 }
-Delivery delivery = Delivery(
-  timeOfOrder: DateTime.now(),
-  timeOfDelivery: DateTime.now(),
-  payment: 'Cash',
-  numOfPackage: '1',
-  weight: 200,
-  size: 'Large',
-  description: 'Fragile items',
-  notes: ['Handle with care'],
-);
